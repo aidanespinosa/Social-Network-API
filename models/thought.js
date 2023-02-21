@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
-const Schema = mongoose.Schema;
-
+const reactionSchema = require("./reaction");
 const thoughtSchema = new Schema({
   thoughtText: {
     type: String,
@@ -23,34 +22,8 @@ const thoughtSchema = new Schema({
     type: String,
     required: true,
   },
-  reactions: {
-    type: [reactionSchema],
-  },
+  reactions: [reactionSchema],
 });
 
-const reactionSchema = new Schema({
-  reactionId: {
-    type: Schema.Types.ObjectId,
-    required: true,
-    unique: true,
-    auto: true,
-  },
-  reactionBody: {
-    type: String,
-    required: true,
-    maxlength: 280,
-  },
-  username: {
-    type: String,
-    required: true,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-    get: function (createdAt) {
-      return createdAt.toLocaleString();
-    },
-  },
-});
-
-const Thought = mongoose.model("thought", thoughtSchema);
+const Thought = model("thought", thoughtSchema);
+module.exports = Thought;
