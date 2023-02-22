@@ -8,7 +8,7 @@ const {
   removeThought,
 } = require("../../controllers/userController");
 
-// /api/students
+// /api/users
 router.route("/").get(getUsers).post(createUser);
 
 // /api/users/:userId

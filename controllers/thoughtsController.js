@@ -20,7 +20,9 @@ module.exports = {
   },
   // Create a thought
   createThought(req, res) {
-    Thought.create(req.body)
+    console.log(req.body);
+    Thought.create({ ...req.body, reactions: [] })
+
       .then((thought) => res.json(thought))
       .catch((err) => {
         console.log(err);
