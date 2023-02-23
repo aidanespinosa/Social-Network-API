@@ -35,3 +35,5 @@ Jest Node Module
 - Email: aidanespinosa3@gmail.com
 
 ## Link to how-to-video
+
+https://drive.google.com/file/d/1y7_CMmqhmW0GQD2sL1SVG_VgPhNap4qN/view
